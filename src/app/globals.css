@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'PrintedMoments';
+  src: url('/fonts/printedmoments-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-serif: 'beaufort-pro', 'Cormorant Infant', Georgia, serif;
+  --font-sans: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-nav: 'gravesend-sans', 'Mulish', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: 'PrintedMoments', cursive, Georgia, serif;
+  
+  --color-charcoal: #2B2B2B;
+  --color-cream: #F6F4EE;
+  --color-cream-alt: #F3EFE6;
+  --color-sand: #E3D8CA;
+  --color-sage: #86B3B3;
+  --color-dark: #1E2220;
+}
+
+@theme {
+  --font-serif: 'beaufort-pro', 'Cormorant Infant', Georgia, serif;
+  --font-sans: 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'PrintedMoments', cursive, Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--color-charcoal);
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+}
+
+.font-script,
+h1 strong em, h2 strong em, h3 strong em, h4 strong em {
+  font-family: 'PrintedMoments', cursive, Georgia, serif;
+  font-weight: 300;
+  font-style: normal !important;
+  color: #86B3B3;
+  display: inline-block;
+}
+
+/* Photo Framing: Clean, sharp rectangular photography matching original website */
+.photo-frame {
+  border-radius: 0px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Primary Button: Exact Underline Style from Squarespace primary-button-shape-underline and custom.css */
+.btn-primary,
+.sqs-button-element--primary {
+  display: inline-block;
+  position: relative;
+  background: transparent !important;
+  color: #2B2B2B !important;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0 0 6px 0;
+  border: none !important;
+  border-bottom: 1px solid #515151 !important;
+  border-radius: 0px !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.sqs-button-element--primary:hover {
+  opacity: 0.6 !important;
+}
+
+.btn-primary::before,
+.sqs-button-element--primary::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  border-bottom: 1px solid #2B2B2B !important;
+  transition-duration: 0.8s;
+}
+
+.btn-primary:hover::before,
+.sqs-button-element--primary:hover::before {
+  right: 100%;
+}
+
+/* Secondary Button: Pill / Oval Outline Button for Header & CTA */
+.btn-secondary,
+.sqs-button-element--secondary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent !important;
+  color: #2B2B2B !important;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.85rem;
+  border: 1px solid #2B2B2B !important;
+  border-radius: 9999px !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover,
+.sqs-button-element--secondary:hover,
+.btn-outline:hover {
+  background-color: #2B2B2B !important;
+  color: #FFFFFF !important;
+}
+
+.btn-outline:hover {
+  background-color: #2B2B2B;
+  color: #FFFFFF;
+}
+
+/* Card Button: simple clean button */
+.btn-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #2B2B2B;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #2B2B2B;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-card:hover {
+  background-color: #2B2B2B;
+  color: #FFFFFF;
+}
+
+/* Nav link hover matching Squarespace custom.css */
+.nav-link-hover,
+.header-nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link-hover::after,
+.header-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #2B2B2B;
+  transition: width 0.3s ease;
+}
+
+.nav-link-hover:hover::after,
+.header-nav-link:hover::after,
+.header-nav-link-wrapper:hover .header-nav-link::after {
+  width: 100%;
+}
+
+/* =========================================================================
+   Hero Section Fluid Engine Grid (Matching exact Squarespace fe-670423e206da6c036366fd5e)
+   ========================================================================= */
+.fe-hero-grid {
+  --grid-gutter: calc(6vw - 11px);
+  --cell-max-width: calc((1500px - (11px * (8 - 1))) / 8);
+
+  display: grid;
+  position: relative;
+  grid-template-rows: repeat(24, minmax(24px, auto));
+  grid-template-columns:
+    minmax(var(--grid-gutter), 1fr)
+    repeat(8, minmax(0, var(--cell-max-width)))
+    minmax(var(--grid-gutter), 1fr);
+  row-gap: 11px;
+  column-gap: 11px;
+  overflow-x: clip;
+}
+
+@media (min-width: 768px) {
+  .fe-hero-grid {
+    --grid-gutter: calc(4vw - 11px);
+    --cell-max-width: calc((1500px - (11px * (24 - 1))) / 24);
+    --row-height-scaling-factor: 0.0215;
+    --container-width: min(1500px, calc(100vw - 8vw));
+
+    grid-template-rows: repeat(18, minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+    grid-template-columns:
+      minmax(var(--grid-gutter), 1fr)
+      repeat(24, minmax(0, var(--cell-max-width)))
+      minmax(var(--grid-gutter), 1fr);
+  }
+}
+
+.hero-block-eyebrow {
+  grid-area: 2/2/5/10;
+  z-index: 4;
+}
+
+.hero-block-heading {
+  grid-area: 5/2/12/10;
+  z-index: 3;
+}
+
+.hero-block-button {
+  grid-area: 12/2/14/10;
+  z-index: 1;
+}
+
+.hero-block-photo-left {
+  grid-area: 15/1/24/8;
+  z-index: 5;
+}
+
+.hero-block-photo-right {
+  grid-area: 18/9/24/11;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .hero-block-eyebrow {
+    grid-area: 2/12/4/20;
+    z-index: 7;
+  }
+
+  .hero-block-heading {
+    grid-area: 7/12/15/24;
+    z-index: 6;
+  }
+
+  .hero-block-button {
+    grid-area: 15/12/17/24;
+    z-index: 2;
+  }
+
+  .hero-block-photo-left {
+    grid-area: 2/1/17/10;
+    z-index: 5;
+  }
+
+  .hero-block-photo-right {
+    grid-area: 7/25/17/27;
+    z-index: 4;
+  }
+}
+
+
+
+
+
+
